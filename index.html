@@ -660,7 +660,7 @@ footer{margin-top:clamp(80px,12vw,160px);border-top:1px solid var(--line);overfl
 <!-- ═══ MAP ═══ -->
 <section class="page" id="p-map" data-name="Travel">
   <div class="wrap sec" style="padding-top:clamp(40px,6vw,80px)">
-    <div class="sec-head"><span class="label paren">Travel</span><h2>Positions <em>held</em></h2><p>Homes, places I've been and places I want to go. Drag to pan, scroll or pinch to zoom, tap a place in the list to fly there.</p></div>
+    <div class="sec-head"><span class="label paren">Travel</span><h2>Positions <em>held</em></h2><p>Home and the places I've been. Drag to pan, scroll or pinch to zoom, tap a place in the list to fly there.</p></div>
     <div class="atlas">
       <div class="map-box" id="mapBox">
         <svg id="mapSvg" role="img" aria-label="World map with places Aryan has lived, visited and wants to visit"></svg>
@@ -1019,7 +1019,7 @@ function buildMap(){
   let vb = { ...full };
   const active = { home:true, visited:true, wish:true };
   const COLORS = { home:'#B4382A', visited:'#16402F', wish:'#C88A16' };
-  const NAMES = { home:'Home', visited:'Visited', wish:'Want to go' };
+  const NAMES = { home:'Home', visited:'Visited' };
   const fit = () => { const r = box.getBoundingClientRect(); if (!r.width || !r.height) return; const a = r.width/r.height; const c = { x: vb.x+vb.w/2, y: vb.y+vb.h/2 }; if (vb.w/vb.h > a) vb.h = vb.w/a; else vb.w = vb.h*a; vb.x = c.x-vb.w/2; vb.y = c.y-vb.h/2; };
   const clamp = () => { if (!box.getBoundingClientRect().width) return; vb.w = Math.min(Math.max(vb.w, W/400), W*1.2); const r = box.getBoundingClientRect(); vb.h = vb.w * r.height/r.width; vb.x = Math.min(Math.max(vb.x, -vb.w*.4), W - vb.w*.6); vb.y = Math.min(Math.max(vb.y, -vb.h*.4), H - vb.h*.6); };
   function draw(){
